@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Flammy — Criatividade que ascende Tecnologia</title>
+<meta name="description" content="Flammy é uma software house que transforma ideias e necessidades de negócio em sistemas, automações e aplicações sob medida. Veja o catálogo de serviços e as formas de pagamento.">
+<meta name="theme-color" content="#141110">
+<link rel="icon" type="image/png" href="images/logo.png">
+<meta property="og:title" content="Flammy — Criatividade que ascende Tecnologia">
+<meta property="og:description" content="Sistemas, automações e aplicações sob medida para o seu negócio.">
+<meta property="og:image" content="images/logo.png">
+<script>document.documentElement.className = 'js';</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital@1&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -11,69 +18,119 @@
 </head>
 <body>
 
-<header>
-  <nav class="wrap">
-    <a href="#top" class="brand"><img src="images/logo.png" alt="Flammy"> FLAMMY™</a>
+<!-- ============================================================
+     ÍCONES (sprite SVG) — usados com <svg class="ic"><use href="#i-nome"/></svg>
+     ============================================================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-web" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></symbol>
+    <symbol id="i-app" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-auto" viewBox="0 0 24 24"><path d="M13 2.5 4.5 13.5H11l-1 8 8.500-11H12z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.500"/><circle cx="18" cy="6" r="2.500"/><circle cx="18" cy="18" r="2.500"/><path d="M8.500 6h7M6 8.500V12a3 3 0 0 0 3 3h6.500"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.200 3.200 3.200 14.800 0 18M12 3c-3.200 3.200-3.200 14.800 0 18"/></symbol>
+    <symbol id="i-support" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.500"/><path d="m5.600 5.600 3.900 3.900M14.500 14.500l3.900 3.900M18.400 5.600l-3.900 3.900M9.500 14.500l-3.900 3.900"/></symbol>
+    <symbol id="i-pix" viewBox="0 0 24 24"><path d="M12 3 21 12 12 21 3 12z"/><path d="M8.500 12 12 8.500l3.500 3.500-3.500 3.500z"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.500" y="5" width="19" height="14" rx="2.500"/><path d="M2.500 10h19M6 15h4"/></symbol>
+    <symbol id="i-boleto" viewBox="0 0 24 24"><path d="M3.500 5v14M7 5v14M10 5v14M14 5v14M17 5v14M20.500 5v14"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 9.500 12 4l9 5.500M5 10v8M9.500 10v8M14.500 10v8M19 10v8M3 20.500h18"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3.500 6h.01M3.500 12h.01M3.500 18h.01"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.500"/><path d="M2.500 20c0-3.600 2.900-6 6.500-6s6.500 2.400 6.500 6"/><circle cx="17" cy="9" r="2.500"/><path d="M17.500 14.200c2.400.300 4 2.100 4 5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 20l1.400-4.200A8.500 8.500 0 1 1 8.400 18.700z"/><path d="M9 12h.01M12 12h.01M15 12h.01"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.500"/><path d="m3.500 7 8.500 6.500L20.500 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.500 4.500 4.500L19 7.500"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8.500 5v14M15.500 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7.500 4.500v15l12-7.500z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ============================================================
+     CABEÇALHO
+     ============================================================ -->
+<header id="header">
+  <nav class="wrap" aria-label="Principal">
+    <a href="#top" class="brand"><img src="images/logo.png" alt="" width="40" height="30"> <span>FLAMMY™</span></a>
     <ul class="navlinks">
       <li><a href="#quemsomos">Quem somos</a></li>
-      <li><a href="#problema">Problema &amp; Solução</a></li>
+      <li><a href="#servicos">Serviços</a></li>
       <li><a href="#praquem">Pra quem</a></li>
-      <li><a href="#nichos">Nichos</a></li>
-      <li><a href="#oquefazemos">O que fazemos</a></li>
+      <li><a href="#pagamento">Pagamento</a></li>
+      <li><a href="#sobrenos">Sobre nós</a></li>
     </ul>
     <div class="navcta">
-      <a href="#contato" class="btn solid-black"><span class="long">Fale com a gente</span><span aria-hidden="true">↗</span></a>
-      <button class="burger" aria-label="Abrir menu" aria-expanded="false">
+      <a href="#contato" class="btn solid-red"><span class="long">Fale com a gente</span><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a>
+      <button class="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
-  <div id="mnav" style="display:none;" class="wrap">
-    <ul style="list-style:none;padding:14px 0;margin:0;display:flex;flex-direction:column;gap:14px;">
+  <div id="mnav" class="mnav" hidden>
+    <ul class="wrap">
       <li><a href="#quemsomos">Quem somos</a></li>
       <li><a href="#problema">Problema &amp; Solução</a></li>
+      <li><a href="#servicos">Serviços</a></li>
       <li><a href="#praquem">Pra quem fazemos</a></li>
       <li><a href="#nichos">Nichos</a></li>
-      <li><a href="#oquefazemos">O que fazemos</a></li>
+      <li><a href="#pagamento">Pagamento</a></li>
+      <li><a href="#sobrenos">Sobre nós</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
   </div>
 </header>
 
-<main id="top">
+<main id="conteudo">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-pattern"></div>
-    <div class="wrap">
+  <!-- ==========================================================
+       HERO — rede animada de pontos + mascote + atalhos
+       ========================================================== -->
+  <section class="hero" id="top">
+    <canvas class="net" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
       <div class="hero-copy">
-        <div class="hero-eyebrow">Software house</div>
-        <h1>FLAMMY<sup style="font-size:0.32em;">™</sup></h1>
-        <span class="tagline">Criatividade que ascende Tecnologia</span>
-        <p class="lede">Transformamos ideias e necessidades de negócio em soluções digitais: softwares personalizados, automações e ferramentas pensadas para resolver problemas reais.</p>
-        <div class="hero-ctas">
-          <a href="#quemsomos" class="btn ghost-white">Conheça a Flammy</a>
-          <a href="#contato" class="btn solid-black">Fale com a gente ↗</a>
-        </div>
+        <span class="hero-tag" data-hero style="--delay:.05s">Software house</span>
+        <h1 data-hero style="--delay:.15s">FLAMMY<sup class="tm">™</sup></h1>
+        <span class="tagline" data-hero style="--delay:.25s">Criatividade que ascende Tecnologia</span>
+        <p class="lede" data-hero style="--delay:.35s">Transformamos ideias e necessidades de negócio em soluções digitais: softwares personalizados, automações e ferramentas pensadas para resolver problemas reais.</p>
+
+        <!-- Atalhos empilhados (inspirado na lista de links do LinkStack) -->
+        <nav class="linkstack" aria-label="Atalhos">
+          <a href="#servicos" class="link-btn primary" data-hero style="--delay:.5s"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg><span>Ver catálogo de serviços</span></a>
+          <a href="#pagamento" class="link-btn" data-hero style="--delay:.6s"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg><span>Formas de pagamento</span></a>
+          <a href="#sobrenos" class="link-btn" data-hero style="--delay:.7s"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg><span>Conhecer a equipe</span></a>
+          <a href="#contato" class="link-btn" data-hero data-wa="Olá, Flammy! Vim pelo site e quero conversar sobre um projeto." style="--delay:.8s"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><span>Chamar no WhatsApp</span></a>
+        </nav>
       </div>
-      <div class="hero-art">
-        <img src="images/logo.png" alt="Mascote Flammy">
+
+      <div class="hero-art" aria-hidden="false">
+        <div class="float">
+          <div class="mascot" id="mascot">
+            <img src="images/logo.png" alt="Mascote da Flammy" width="700" height="531" data-hero style="--delay:.3s">
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- QUEM SOMOS -->
-  <section class="quemsomos" id="quemsomos">
+  <!-- ==========================================================
+       QUEM SOMOS
+       ========================================================== -->
+  <section class="sec quemsomos" id="quemsomos">
     <div class="wrap qs-grid">
       <div>
-        <div class="pill" style="background:var(--ink);color:#fff;margin-bottom:30px;">Quem<br>somos?</div>
+        <h2 class="pill">Quem<br>somos?</h2>
         <div class="qs-card">
           <p>A Flammy é uma software house focada em transformar ideias e necessidades de negócio em soluções digitais. Criamos softwares personalizados, automações e ferramentas digitais pensadas para resolver problemas reais e acompanhar o crescimento de cada cliente.</p>
           <p>Nossa proposta: aproximar pessoas e tecnologia, tornando soluções digitais mais acessíveis, simples e estratégicas através da criatividade.</p>
         </div>
       </div>
       <div class="qs-photo">
-        <img src="images/team_table.png" alt="Equipe trabalhando ao redor de uma mesa">
+        <div class="qs-halo" aria-hidden="true"></div>
+        <img src="images/team_table.png" alt="Equipe trabalhando ao redor de uma mesa" width="682" height="800" loading="lazy">
         <div class="qs-tags">
           <span class="tag">Tecnologia para<br>transformar.</span>
           <span class="tag">Adaptação para<br>evoluir.</span>
@@ -83,83 +140,332 @@
     </div>
   </section>
 
-  <!-- PROBLEMA / SOLUCAO -->
+  <!-- ==========================================================
+       PROBLEMA / SOLUÇÃO
+       ========================================================== -->
   <section class="probsol" id="problema">
     <div class="ps-grid">
       <div class="ps-col problema">
-        <span class="pill" style="background:var(--ink);color:#fff;">Problema</span>
-        <div class="ps-item"><h4>Processos manuais</h4><p>Tarefas repetitivas consomem tempo e aumentam a possibilidade de erros.</p></div>
-        <div class="ps-item"><h4>Ferramentas desconectadas</h4><p>Informações espalhadas dificultam o controle e a tomada de decisões.</p></div>
-        <div class="ps-item"><h4>Soluções genéricas</h4><p>Softwares prontos nem sempre atendem às necessidades específicas de cada negócio.</p></div>
-        <div class="ps-item"><h4>Tecnologia pouco acessível</h4><p>Para pequenos negócios, soluções personalizadas podem parecer complexas ou caras.</p></div>
+        <h2 class="pill">Problema</h2>
+        <div class="ps-item"><h3>Processos manuais</h3><p>Tarefas repetitivas consomem tempo e aumentam a possibilidade de erros.</p></div>
+        <div class="ps-item"><h3>Ferramentas desconectadas</h3><p>Informações espalhadas dificultam o controle e a tomada de decisões.</p></div>
+        <div class="ps-item"><h3>Soluções genéricas</h3><p>Softwares prontos nem sempre atendem às necessidades específicas de cada negócio.</p></div>
+        <div class="ps-item"><h3>Tecnologia pouco acessível</h3><p>Para pequenos negócios, soluções personalizadas podem parecer complexas ou caras.</p></div>
       </div>
       <div class="ps-col solucao">
-        <span class="pill white">Solução</span>
-        <div class="ps-item"><h4>Automação</h4><p>Transformamos tarefas repetitivas em processos mais rápidos e eficientes.</p></div>
-        <div class="ps-item"><h4>Integração</h4><p>Conectamos informações e ferramentas para centralizar a operação.</p></div>
-        <div class="ps-item"><h4>Desenvolvimento sob medida</h4><p>Criamos soluções de acordo com a realidade e os objetivos de cada cliente.</p></div>
-        <div class="ps-item"><h4>Tecnologia acessível</h4><p>Desenvolvemos soluções pensando no momento, orçamento e crescimento do negócio.</p></div>
-    
-  </section>
-
-  <!-- PRA QUEM FAZEMOS -->
-  <section class="praquem" id="praquem">
-    <div class="wrap pq-grid">
-      <div class="pq-photo"><img src="images/meeting.jpg" alt="Equipe em reunião de trabalho"></div>
-      <div class="pq-list">
-        <span class="pill" style="background:var(--ink);color:#fff;">Pra quem<br>fazemos?</span>
-        <div class="pq-item"><h4>Negócios recém-criados</h4><p>Empresas que estão começando e precisam construir sua presença e estrutura digital desde o início.</p></div>
-        <div class="pq-item"><h4>Empreendedores</h4><p>Pessoas com uma ideia de negócio que precisam transformá-la em uma solução tecnológica.</p></div>
-        <div class="pq-item"><h4>Pequenas empresas</h4><p>Negócios que já estão funcionando, mas ainda dependem de processos manuais ou ferramentas pouco eficientes.</p></div>
-        <div class="pq-item"><h4>Negócios em crescimento</h4><p>Empresas que estão aumentando sua operação e precisam de tecnologia para acompanhar essa evolução.</p></div>
+        <h2 class="pill white">Solução</h2>
+        <div class="ps-item"><h3>Automação</h3><p>Transformamos tarefas repetitivas em processos mais rápidos e eficientes.</p></div>
+        <div class="ps-item"><h3>Integração</h3><p>Conectamos informações e ferramentas para centralizar a operação.</p></div>
+        <div class="ps-item"><h3>Desenvolvimento sob medida</h3><p>Criamos soluções de acordo com a realidade e os objetivos de cada cliente.</p></div>
+        <div class="ps-item"><h3>Tecnologia acessível</h3><p>Desenvolvemos soluções pensando no momento, orçamento e crescimento do negócio.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- NICHOS -->
-  <section class="nichos" id="nichos">
+  <!-- ==========================================================
+       SERVIÇOS — CATÁLOGO
+       Para editar: cada <article class="svc"> é um serviço.
+       data-cat define em qual filtro ele aparece.
+       data-wa é a mensagem que vai pronta no WhatsApp.
+       ========================================================== -->
+  <section class="sec servicos" id="servicos">
     <div class="wrap">
-      <span class="pill" style="background:var(--ink);color:#fff;">Nichos</span>
-      <div class="nc-grid">
-        <div class="nc-photo"><img src="images/kitchen.jpg" alt="Cozinha de restaurante"></div>
-        <div class="nc-photo"><img src="images/barber.jpg" alt="Barbearia"></div>
-        <div class="nc-photo"><img src="images/store.jpg" alt="Loja física"></div>
-        <div class="nc-tags">
-          <span class="pill small red-small">Restaurantes ou Delivery</span>
-          <span class="pill small black-small">Barbearias ou Salões de Beleza</span>
-          <span class="pill small red-small">Lojas Físicas</span>
-          <span class="pill small black-small">Profissionais Autônomos</span>
-          <span class="pill small red-small">Prestadores de Serviços</span>
+      <div class="sec-head">
+        <h2 class="pill">Catálogo de<br>serviços</h2>
+        <p class="lead">Escolha o que combina com o momento do seu negócio. Cada serviço pode ser contratado sozinho ou combinado com os outros.</p>
+      </div>
+
+      <div class="chips" role="group" aria-label="Filtrar serviços">
+        <button class="chip" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+        <button class="chip" type="button" data-filter="sistemas" aria-pressed="false">Sistemas</button>
+        <button class="chip" type="button" data-filter="automacao" aria-pressed="false">Automação</button>
+        <button class="chip" type="button" data-filter="presenca" aria-pressed="false">Presença e suporte</button>
+      </div>
+
+      <div class="svc-grid">
+
+        <article class="svc pop" data-cat="sistemas">
+          <div class="svc-ic"><svg class="ic" aria-hidden="true"><use href="#i-web"/></svg></div>
+          <h3>Sistemas Web</h3>
+          <p>Sistemas sob medida para organizar processos, operações e a gestão do seu negócio.</p>
+          <ul class="inclui">
+            <li>Painéis e relatórios</li>
+            <li>Cadastros e controle de acesso</li>
+            <li>Fluxos internos automatizados</li>
+            <li>Acesso de qualquer dispositivo</li>
+          </ul>
+          <p class="ideal"><span>Ideal para</span> Pequenas empresas, prestadores de serviços</p>
+          <div class="svc-foot">
+            <span class="preco">Valor sob consulta</span>
+            <a href="#contato" class="btn mini" data-wa="Olá, Flammy! Tenho interesse em Sistemas Web. Podem me passar um orçamento?">Pedir orçamento</a>
+          </div>
+        </article>
+
+        <article class="svc pop" data-cat="sistemas">
+          <div class="svc-ic"><svg class="ic" aria-hidden="true"><use href="#i-app"/></svg></div>
+          <h3>Aplicações Digitais</h3>
+          <p>Plataformas e aplicativos que transformam uma ideia em um produto funcional.</p>
+          <ul class="inclui">
+            <li>Primeira versão para validar a ideia</li>
+            <li>Interface moderna e responsiva</li>
+            <li>Login e área do cliente</li>
+            <li>Evolução por etapas</li>
+          </ul>
+          <p class="ideal"><span>Ideal para</span> Empreendedores, negócios recém-criados</p>
+          <div class="svc-foot">
+            <span class="preco">Valor sob consulta</span>
+            <a href="#contato" class="btn mini" data-wa="Olá, Flammy! Tenho interesse em Aplicações Digitais. Podem me passar um orçamento?">Pedir orçamento</a>
+          </div>
+        </article>
+
+        <article class="svc pop" data-cat="automacao">
+          <div class="svc-ic"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg></div>
+          <h3>Automação de Processos</h3>
+          <p>Transformamos tarefas repetitivas em processos rápidos e com menos erros.</p>
+          <ul class="inclui">
+            <li>Rotinas e scripts automáticos</li>
+            <li>Envio de mensagens e avisos</li>
+            <li>Geração de planilhas e relatórios</li>
+            <li>Menos retrabalho no dia a dia</li>
+          </ul>
+          <p class="ideal"><span>Ideal para</span> Negócios em crescimento, lojas físicas</p>
+          <div class="svc-foot">
+            <span class="preco">Valor sob consulta</span>
+            <a href="#contato" class="btn mini" data-wa="Olá, Flammy! Tenho interesse em Automação de Processos. Podem me passar um orçamento?">Pedir orçamento</a>
+          </div>
+        </article>
+
+        <article class="svc pop" data-cat="automacao">
+          <div class="svc-ic"><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg></div>
+          <h3>Integração de Ferramentas</h3>
+          <p>Conectamos planilhas, sistemas e plataformas para centralizar a operação.</p>
+          <ul class="inclui">
+            <li>Integração entre sistemas</li>
+            <li>Dados reunidos em um só lugar</li>
+            <li>Migração de planilhas para sistema</li>
+            <li>Painel único de acompanhamento</li>
+          </ul>
+          <p class="ideal"><span>Ideal para</span> Restaurantes e delivery, pequenas empresas</p>
+          <div class="svc-foot">
+            <span class="preco">Valor sob consulta</span>
+            <a href="#contato" class="btn mini" data-wa="Olá, Flammy! Tenho interesse em Integração de Ferramentas. Podem me passar um orçamento?">Pedir orçamento</a>
+          </div>
+        </article>
+
+        <article class="svc pop" data-cat="presenca">
+          <div class="svc-ic"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg></div>
+          <h3>Sites e Presença Digital</h3>
+          <p>Sites e páginas que apresentam o seu negócio e levam o cliente até você.</p>
+          <ul class="inclui">
+            <li>Site institucional ou página de vendas</li>
+            <li>Catálogo de serviços ou produtos</li>
+            <li>Botão de WhatsApp e formulários</li>
+            <li>Pronto para o celular</li>
+          </ul>
+          <p class="ideal"><span>Ideal para</span> Barbearias e salões, profissionais autônomos</p>
+          <div class="svc-foot">
+            <span class="preco">Valor sob consulta</span>
+            <a href="#contato" class="btn mini" data-wa="Olá, Flammy! Tenho interesse em Sites e Presença Digital. Podem me passar um orçamento?">Pedir orçamento</a>
+          </div>
+        </article>
+
+        <article class="svc pop" data-cat="presenca">
+          <div class="svc-ic"><svg class="ic" aria-hidden="true"><use href="#i-support"/></svg></div>
+          <h3>Suporte e Evolução</h3>
+          <p>Acompanhamos o sistema depois da entrega para ele crescer junto com o negócio.</p>
+          <ul class="inclui">
+            <li>Correções e ajustes</li>
+            <li>Novas funcionalidades</li>
+            <li>Atendimento próximo</li>
+            <li>Melhorias contínuas</li>
+          </ul>
+          <p class="ideal"><span>Ideal para</span> Quem já usa um sistema e quer evoluir</p>
+          <div class="svc-foot">
+            <span class="preco">Valor sob consulta</span>
+            <a href="#contato" class="btn mini" data-wa="Olá, Flammy! Tenho interesse em Suporte e Evolução. Podem me passar um orçamento?">Pedir orçamento</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Faixa "sob medida" (reaproveita as fotos analytics e code) -->
+      <div class="custom pop">
+        <div class="custom-copy">
+          <h3>Não achou exatamente o que precisa?</h3>
+          <p>Desenvolvemos funcionalidades e ferramentas específicas para a necessidade real de cada negócio. Conte o problema e a gente desenha a solução.</p>
+          <a href="#contato" class="btn solid-white" data-wa="Olá, Flammy! Quero conversar sobre uma solução sob medida para o meu negócio.">Conversar sobre minha ideia</a>
+        </div>
+        <div class="custom-photos">
+          <img src="images/analytics.jpg" alt="Painel de dados e produtividade" loading="lazy">
+          <img src="images/code.jpg" alt="Código sendo desenvolvido" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- O QUE FAZEMOS -->
-  <section class="oquefazemos" id="oquefazemos">
-    <div class="wrap oq-grid">
-      <div class="oq-list">
-        <span class="pill" style="background:var(--red);color:#fff;">O que<br>fazemos?</span>
-        <div class="oq-item"><h4>Sistemas Web</h4><p>Desenvolvimento de sistemas web personalizados para processos, operações e gestão.</p></div>
-        <div class="oq-item"><h4>Aplicações Digitais</h4><p>Criação de aplicações e plataformas para transformar ideias em produtos funcionais e impulsionar seu negócio.</p></div>
-        <div class="oq-item"><h4>Soluções Sob Medida</h4><p>Desenvolvimento de funcionalidades e ferramentas específicas para necessidades reais de cada negócio.</p></div>
-      </div>
-      <div class="oq-photos">
-        <img src="images/analytics.jpg" alt="Painel de dados e produtividade">
-        <img src="images/code.jpg" alt="Código sendo desenvolvido">
+  <!-- ==========================================================
+       PRA QUEM FAZEMOS
+       ========================================================== -->
+  <section class="sec praquem" id="praquem">
+    <div class="wrap pq-grid">
+      <div class="pq-photo"><img src="images/meeting.jpg" alt="Equipe em reunião de trabalho" width="900" height="599" loading="lazy"></div>
+      <div class="pq-list">
+        <h2 class="pill ink">Pra quem<br>fazemos?</h2>
+        <div class="pq-item"><h3>Negócios recém-criados</h3><p>Empresas que estão começando e precisam construir sua presença e estrutura digital desde o início.</p></div>
+        <div class="pq-item"><h3>Empreendedores</h3><p>Pessoas com uma ideia de negócio que precisam transformá-la em uma solução tecnológica.</p></div>
+        <div class="pq-item"><h3>Pequenas empresas</h3><p>Negócios que já estão funcionando, mas ainda dependem de processos manuais ou ferramentas pouco eficientes.</p></div>
+        <div class="pq-item"><h3>Negócios em crescimento</h3><p>Empresas que estão aumentando sua operação e precisam de tecnologia para acompanhar essa evolução.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section class="contato" id="contato">
+  <!-- ==========================================================
+       NICHOS
+       ========================================================== -->
+  <section class="sec nichos" id="nichos">
     <div class="wrap">
-      <img src="images/logo.png" alt="Flammy">
+      <h2 class="pill">Nichos</h2>
+      <div class="nc-grid">
+        <div class="nc-photo"><img src="images/kitchen.jpg" alt="Cozinha de restaurante" loading="lazy"></div>
+        <div class="nc-photo"><img src="images/barber.jpg" alt="Barbearia" loading="lazy"></div>
+        <div class="nc-photo"><img src="images/store.jpg" alt="Loja física" loading="lazy"></div>
+      </div>
+      <div class="nc-tags">
+        <span class="pill small red-small">Restaurantes ou Delivery</span>
+        <span class="pill small dark-small">Barbearias ou Salões de Beleza</span>
+        <span class="pill small red-small">Lojas Físicas</span>
+        <span class="pill small dark-small">Profissionais Autônomos</span>
+        <span class="pill small red-small">Prestadores de Serviços</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       PAGAMENTO
+       ATENÇÃO: textos abaixo são uma sugestão. Ajuste para as
+       condições reais da Flammy (formas aceitas, parcelamento etc.).
+       ========================================================== -->
+  <section class="sec pagamento" id="pagamento">
+    <div class="wrap">
+      <div class="pg-top">
+        <div class="sec-head">
+          <h2 class="pill">Pagamento</h2>
+          <p class="lead">Formas de pagamento pensadas para quem está começando e para quem já está crescendo. Valores e condições ficam combinados por escrito na proposta de cada projeto.</p>
+        </div>
+
+        <div class="pg-methods">
+          <article class="pay pop">
+            <svg class="ic" aria-hidden="true"><use href="#i-pix"/></svg>
+            <h3>Pix</h3>
+            <p>Pagamento à vista, com confirmação na hora.</p>
+          </article>
+          <article class="pay pop">
+            <svg class="ic" aria-hidden="true"><use href="#i-card"/></svg>
+            <h3>Cartão de crédito</h3>
+            <p>Parcelado, para o valor do projeto caber no seu fluxo de caixa.</p>
+          </article>
+          <article class="pay pop">
+            <svg class="ic" aria-hidden="true"><use href="#i-boleto"/></svg>
+            <h3>Boleto</h3>
+            <p>Com vencimento combinado na proposta, para quem paga pelo financeiro.</p>
+          </article>
+          <article class="pay pop">
+            <svg class="ic" aria-hidden="true"><use href="#i-bank"/></svg>
+            <h3>Transferência</h3>
+            <p>TED ou DOC para projetos maiores, com os dados enviados na proposta.</p>
+          </article>
+        </div>
+      </div>
+
+      <h3 class="steps-title">Como funciona o pagamento</h3>
+      <ol class="steps">
+        <li class="pop"><span class="n">1</span><h4>Conversa</h4><p>Você conta a ideia ou o problema. A gente entende o cenário e tira as dúvidas.</p></li>
+        <li class="pop"><span class="n">2</span><h4>Proposta</h4><p>Enviamos escopo, prazo e valor por escrito. Só seguimos com a sua aprovação.</p></li>
+        <li class="pop"><span class="n">3</span><h4>Entrada e início</h4><p>Com a proposta aprovada, combinamos a entrada e começamos o desenvolvimento.</p></li>
+        <li class="pop"><span class="n">4</span><h4>Entrega e parcelas</h4><p>O restante é pago por etapa entregue ou parcelado, como ficou combinado.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SOBRE NÓS — SLIDE DA EQUIPE
+       Para editar: cada <article class="member"> é um slide.
+       Troque a foto (images/equipe/), o nome, a função e a bio.
+       Para adicionar alguém, copie um <article> inteiro.
+       ========================================================== -->
+  <section class="sec sobrenos" id="sobrenos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="pill">Sobre nós</h2>
+        <p class="lead">Conheça as pessoas que desenham, programam e acompanham cada projeto da Flammy.</p>
+      </div>
+
+      <div class="slider" id="equipe" role="region" aria-roledescription="carrossel" aria-label="Integrantes da equipe">
+        <div class="slider-viewport" tabindex="0">
+          <div class="slider-track">
+
+            <article class="member" role="group" aria-roledescription="slide" aria-label="1 de 4">
+              <figure class="member-photo"><img src="images/equipe/membro-1.svg" alt="Foto de Gilmar Araújo Santos Júnior" width="400" height="500" draggable="false"></figure>
+              <div class="member-body">
+                <h3>Gilmar Araújo Santos Júnior</h3>
+                <p class="member-role">Desenvolvedor</p>
+                <p>Transforma ideias em código. Atua no desenvolvimento e na automação das soluções digitais da Flammy.</p>
+              </div>
+            </article>
+
+            <article class="member" role="group" aria-roledescription="slide" aria-label="2 de 4">
+              <figure class="member-photo"><img src="images/equipe/membro-2.svg" alt="Foto do integrante" width="400" height="500" draggable="false"></figure>
+              <div class="member-body">
+                <h3>Nome do integrante</h3>
+                <p class="member-role">Função na equipe</p>
+                <p>Escreva aqui uma apresentação curta: formação, experiência e o que essa pessoa faz na Flammy.</p>
+              </div>
+            </article>
+
+            <article class="member" role="group" aria-roledescription="slide" aria-label="3 de 4">
+              <figure class="member-photo"><img src="images/equipe/membro-3.svg" alt="Foto do integrante" width="400" height="500" draggable="false"></figure>
+              <div class="member-body">
+                <h3>Nome do integrante</h3>
+                <p class="member-role">Função na equipe</p>
+                <p>Escreva aqui uma apresentação curta: formação, experiência e o que essa pessoa faz na Flammy.</p>
+              </div>
+            </article>
+
+            <article class="member" role="group" aria-roledescription="slide" aria-label="4 de 4">
+              <figure class="member-photo"><img src="images/equipe/membro-4.svg" alt="Foto do integrante" width="400" height="500" draggable="false"></figure>
+              <div class="member-body">
+                <h3>Nome do integrante</h3>
+                <p class="member-role">Função na equipe</p>
+                <p>Escreva aqui uma apresentação curta: formação, experiência e o que essa pessoa faz na Flammy.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="slider-bar">
+          <button class="round" type="button" data-prev aria-label="Integrante anterior"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg></button>
+          <div class="slider-dots" role="group" aria-label="Escolher integrante"></div>
+          <button class="round" type="button" data-next aria-label="Próximo integrante"><svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+          <span class="slider-count" aria-live="off">1 de 4</span>
+          <button class="round ghost" type="button" data-toggle aria-label="Pausar rotação automática"><svg class="ic" aria-hidden="true"><use href="#i-pause"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       CONTATO
+       ========================================================== -->
+  <section class="contato" id="contato">
+    <canvas class="net" aria-hidden="true"></canvas>
+    <div class="wrap contato-in">
+      <img src="images/logo.png" alt="Flammy" width="700" height="531" loading="lazy">
       <h2>Vamos criar<br>algo juntos?</h2>
       <p>Conte pra gente sua ideia ou o problema que você quer resolver. A Flammy transforma isso em software.</p>
       <div class="contato-ctas">
-        <a href="mailto:contato@flammy.dev" class="btn solid-red">contato@flammy.dev</a>
-        <a href="https://wa.me/5500000000000" class="btn ghost-white">Chamar no WhatsApp ↗</a>
+        <a href="mailto:contato@flammy.dev" class="btn solid-red"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>contato@flammy.dev</a>
+        <a href="https://wa.me/5500000000000" class="btn ghost-white" data-wa="Olá, Flammy! Vim pelo site e quero conversar sobre um projeto."><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Chamar no WhatsApp</a>
       </div>
     </div>
   </section>
@@ -168,7 +474,7 @@
 
 <footer>
   <div class="wrap">
-    <span>FLAMMY 2026 — Criatividade que ascende Tecnologia</span>
+    <a href="#top" class="foot-brand"><img src="images/logo.png" alt="" width="36" height="27"> <span>FLAMMY 2026 — Criatividade que ascende Tecnologia</span></a>
     <span>Criado por Gilmar Araújo Santos Júnior</span>
   </div>
 </footer>
