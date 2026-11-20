@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Flammy — Criatividade que ascende Tecnologia</title>
 <meta name="description" content="Flammy é uma software house que transforma ideias e necessidades de negócio em sistemas, automações e aplicações sob medida. Veja o catálogo de serviços e as formas de pagamento.">
-<meta name="theme-color" content="#141110">
+<meta name="theme-color" content="#0a0909">
 <link rel="icon" type="image/png" href="images/logo.png">
 <meta property="og:title" content="Flammy — Criatividade que ascende Tecnologia">
 <meta property="og:description" content="Sistemas, automações e aplicações sob medida para o seu negócio.">
@@ -46,6 +46,12 @@
   </defs>
 </svg>
 
+<!-- Fundo atmosférico animado (decorativo): fica fixo atrás de todo o conteúdo -->
+<div class="animated-background" aria-hidden="true">
+  <span class="gradient-aurora"></span>
+  <span class="gradient-bioluminescent"></span>
+</div>
+
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 
 <!-- ============================================================
@@ -57,9 +63,7 @@
     <ul class="navlinks">
       <li><a href="#quemsomos">Quem somos</a></li>
       <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#praquem">Pra quem</a></li>
       <li><a href="#pagamento">Pagamento</a></li>
-      <li><a href="#sobrenos">Sobre nós</a></li>
     </ul>
     <div class="navcta">
       <a href="#contato" class="btn solid-red"><span class="long">Fale com a gente</span><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a>
@@ -73,10 +77,7 @@
       <li><a href="#quemsomos">Quem somos</a></li>
       <li><a href="#problema">Problema &amp; Solução</a></li>
       <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#praquem">Pra quem fazemos</a></li>
-      <li><a href="#nichos">Nichos</a></li>
       <li><a href="#pagamento">Pagamento</a></li>
-      <li><a href="#sobrenos">Sobre nós</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
   </div>
@@ -101,7 +102,7 @@
         <nav class="linkstack" aria-label="Atalhos">
           <a href="#servicos" class="link-btn primary" data-hero style="--delay:.5s"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg><span>Ver catálogo de serviços</span></a>
           <a href="#pagamento" class="link-btn" data-hero style="--delay:.6s"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg><span>Formas de pagamento</span></a>
-          <a href="#sobrenos" class="link-btn" data-hero style="--delay:.7s"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg><span>Conhecer a equipe</span></a>
+
           <a href="#contato" class="link-btn" data-hero data-wa="Olá, Flammy! Vim pelo site e quero conversar sobre um projeto." style="--delay:.8s"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><span>Chamar no WhatsApp</span></a>
         </nav>
       </div>
@@ -122,7 +123,7 @@
   <section class="sec quemsomos" id="quemsomos">
     <div class="wrap qs-grid">
       <div>
-        <h2 class="pill">Quem<br>somos?</h2>
+        <h2 class="pill section-title">Quem<br>somos?</h2>
         <div class="qs-card">
           <p>A Flammy é uma software house focada em transformar ideias e necessidades de negócio em soluções digitais. Criamos softwares personalizados, automações e ferramentas digitais pensadas para resolver problemas reais e acompanhar o crescimento de cada cliente.</p>
           <p>Nossa proposta: aproximar pessoas e tecnologia, tornando soluções digitais mais acessíveis, simples e estratégicas através da criatividade.</p>
@@ -131,11 +132,6 @@
       <div class="qs-photo">
         <div class="qs-halo" aria-hidden="true"></div>
         <img src="images/team_table.png" alt="Equipe trabalhando ao redor de uma mesa" width="682" height="800" loading="lazy">
-        <div class="qs-tags">
-          <span class="tag">Tecnologia para<br>transformar.</span>
-          <span class="tag">Adaptação para<br>evoluir.</span>
-          <span class="tag">Criatividade<br>para iniciar.</span>
-        </div>
       </div>
     </div>
   </section>
@@ -146,14 +142,14 @@
   <section class="probsol" id="problema">
     <div class="ps-grid">
       <div class="ps-col problema">
-        <h2 class="pill">Problema</h2>
+        <h2 class="pill section-title">Problema</h2>
         <div class="ps-item"><h3>Processos manuais</h3><p>Tarefas repetitivas consomem tempo e aumentam a possibilidade de erros.</p></div>
         <div class="ps-item"><h3>Ferramentas desconectadas</h3><p>Informações espalhadas dificultam o controle e a tomada de decisões.</p></div>
         <div class="ps-item"><h3>Soluções genéricas</h3><p>Softwares prontos nem sempre atendem às necessidades específicas de cada negócio.</p></div>
         <div class="ps-item"><h3>Tecnologia pouco acessível</h3><p>Para pequenos negócios, soluções personalizadas podem parecer complexas ou caras.</p></div>
       </div>
       <div class="ps-col solucao">
-        <h2 class="pill white">Solução</h2>
+        <h2 class="pill white section-title">Solução</h2>
         <div class="ps-item"><h3>Automação</h3><p>Transformamos tarefas repetitivas em processos mais rápidos e eficientes.</p></div>
         <div class="ps-item"><h3>Integração</h3><p>Conectamos informações e ferramentas para centralizar a operação.</p></div>
         <div class="ps-item"><h3>Desenvolvimento sob medida</h3><p>Criamos soluções de acordo com a realidade e os objetivos de cada cliente.</p></div>
@@ -171,7 +167,7 @@
   <section class="sec servicos" id="servicos">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="pill">Catálogo de<br>serviços</h2>
+        <h2 class="pill section-title">Catálogo de<br>serviços</h2>
         <p class="lead">Escolha o que combina com o momento do seu negócio. Cada serviço pode ser contratado sozinho ou combinado com os outros.</p>
       </div>
 
@@ -304,43 +300,6 @@
   </section>
 
   <!-- ==========================================================
-       PRA QUEM FAZEMOS
-       ========================================================== -->
-  <section class="sec praquem" id="praquem">
-    <div class="wrap pq-grid">
-      <div class="pq-photo"><img src="images/meeting.jpg" alt="Equipe em reunião de trabalho" width="900" height="599" loading="lazy"></div>
-      <div class="pq-list">
-        <h2 class="pill ink">Pra quem<br>fazemos?</h2>
-        <div class="pq-item"><h3>Negócios recém-criados</h3><p>Empresas que estão começando e precisam construir sua presença e estrutura digital desde o início.</p></div>
-        <div class="pq-item"><h3>Empreendedores</h3><p>Pessoas com uma ideia de negócio que precisam transformá-la em uma solução tecnológica.</p></div>
-        <div class="pq-item"><h3>Pequenas empresas</h3><p>Negócios que já estão funcionando, mas ainda dependem de processos manuais ou ferramentas pouco eficientes.</p></div>
-        <div class="pq-item"><h3>Negócios em crescimento</h3><p>Empresas que estão aumentando sua operação e precisam de tecnologia para acompanhar essa evolução.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       NICHOS
-       ========================================================== -->
-  <section class="sec nichos" id="nichos">
-    <div class="wrap">
-      <h2 class="pill">Nichos</h2>
-      <div class="nc-grid">
-        <div class="nc-photo"><img src="images/kitchen.jpg" alt="Cozinha de restaurante" loading="lazy"></div>
-        <div class="nc-photo"><img src="images/barber.jpg" alt="Barbearia" loading="lazy"></div>
-        <div class="nc-photo"><img src="images/store.jpg" alt="Loja física" loading="lazy"></div>
-      </div>
-      <div class="nc-tags">
-        <span class="pill small red-small">Restaurantes ou Delivery</span>
-        <span class="pill small dark-small">Barbearias ou Salões de Beleza</span>
-        <span class="pill small red-small">Lojas Físicas</span>
-        <span class="pill small dark-small">Profissionais Autônomos</span>
-        <span class="pill small red-small">Prestadores de Serviços</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================
        PAGAMENTO
        ATENÇÃO: textos abaixo são uma sugestão. Ajuste para as
        condições reais da Flammy (formas aceitas, parcelamento etc.).
@@ -349,7 +308,7 @@
     <div class="wrap">
       <div class="pg-top">
         <div class="sec-head">
-          <h2 class="pill">Pagamento</h2>
+          <h2 class="pill section-title">Pagamento</h2>
           <p class="lead">Formas de pagamento pensadas para quem está começando e para quem já está crescendo. Valores e condições ficam combinados por escrito na proposta de cada projeto.</p>
         </div>
 
@@ -377,80 +336,14 @@
         </div>
       </div>
 
-      <h3 class="steps-title">Como funciona o pagamento</h3>
+      <h3 class="steps-title section-title">Como funciona o processo</h3>
       <ol class="steps">
-        <li class="pop"><span class="n">1</span><h4>Conversa</h4><p>Você conta a ideia ou o problema. A gente entende o cenário e tira as dúvidas.</p></li>
-        <li class="pop"><span class="n">2</span><h4>Proposta</h4><p>Enviamos escopo, prazo e valor por escrito. Só seguimos com a sua aprovação.</p></li>
-        <li class="pop"><span class="n">3</span><h4>Entrada e início</h4><p>Com a proposta aprovada, combinamos a entrada e começamos o desenvolvimento.</p></li>
-        <li class="pop"><span class="n">4</span><h4>Entrega e parcelas</h4><p>O restante é pago por etapa entregue ou parcelado, como ficou combinado.</p></li>
+        <li class="pop" id="etapa-requisitos"><span class="n">1</span><h4>Levantamento de requisitos</h4><p>Entendemos as necessidades, os objetivos e os desafios do seu negócio.</p></li>
+        <li class="pop" id="etapa-proposta"><span class="n">2</span><h4>Proposta e planejamento</h4><p>Definimos a solução, o escopo, os prazos e as condições do projeto.</p></li>
+        <li class="pop" id="etapa-prototipacao"><span class="n">3</span><h4>Prototipação</h4><p>Criamos uma prévia visual para validação antes do desenvolvimento.</p></li>
+        <li class="pop" id="etapa-desenvolvimento"><span class="n">4</span><h4>Desenvolvimento e testes</h4><p>Implementamos a solução e realizamos testes para garantir sua qualidade.</p></li>
+        <li class="pop" id="etapa-entrega"><span class="n">5</span><h4>Entrega e suporte</h4><p>Disponibilizamos o produto final e oferecemos o suporte acordado.</p></li>
       </ol>
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       SOBRE NÓS — SLIDE DA EQUIPE
-       Para editar: cada <article class="member"> é um slide.
-       Troque a foto (images/equipe/), o nome, a função e a bio.
-       Para adicionar alguém, copie um <article> inteiro.
-       ========================================================== -->
-  <section class="sec sobrenos" id="sobrenos">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 class="pill">Sobre nós</h2>
-        <p class="lead">Conheça as pessoas que desenham, programam e acompanham cada projeto da Flammy.</p>
-      </div>
-
-      <div class="slider" id="equipe" role="region" aria-roledescription="carrossel" aria-label="Integrantes da equipe">
-        <div class="slider-viewport" tabindex="0">
-          <div class="slider-track">
-
-            <article class="member" role="group" aria-roledescription="slide" aria-label="1 de 4">
-              <figure class="member-photo"><img src="images/equipe/membro-1.svg" alt="Foto de Gilmar Araújo Santos Júnior" width="400" height="500" draggable="false"></figure>
-              <div class="member-body">
-                <h3>Gilmar Araújo Santos Júnior</h3>
-                <p class="member-role">Desenvolvedor</p>
-                <p>Transforma ideias em código. Atua no desenvolvimento e na automação das soluções digitais da Flammy.</p>
-              </div>
-            </article>
-
-            <article class="member" role="group" aria-roledescription="slide" aria-label="2 de 4">
-              <figure class="member-photo"><img src="images/equipe/membro-2.svg" alt="Foto do integrante" width="400" height="500" draggable="false"></figure>
-              <div class="member-body">
-                <h3>Nome do integrante</h3>
-                <p class="member-role">Função na equipe</p>
-                <p>Escreva aqui uma apresentação curta: formação, experiência e o que essa pessoa faz na Flammy.</p>
-              </div>
-            </article>
-
-            <article class="member" role="group" aria-roledescription="slide" aria-label="3 de 4">
-              <figure class="member-photo"><img src="images/equipe/membro-3.svg" alt="Foto do integrante" width="400" height="500" draggable="false"></figure>
-              <div class="member-body">
-                <h3>Nome do integrante</h3>
-                <p class="member-role">Função na equipe</p>
-                <p>Escreva aqui uma apresentação curta: formação, experiência e o que essa pessoa faz na Flammy.</p>
-              </div>
-            </article>
-
-            <article class="member" role="group" aria-roledescription="slide" aria-label="4 de 4">
-              <figure class="member-photo"><img src="images/equipe/membro-4.svg" alt="Foto do integrante" width="400" height="500" draggable="false"></figure>
-              <div class="member-body">
-                <h3>Nome do integrante</h3>
-                <p class="member-role">Função na equipe</p>
-                <p>Escreva aqui uma apresentação curta: formação, experiência e o que essa pessoa faz na Flammy.</p>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        <div class="slider-bar">
-          <button class="round" type="button" data-prev aria-label="Integrante anterior"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg></button>
-          <div class="slider-dots" role="group" aria-label="Escolher integrante"></div>
-          <button class="round" type="button" data-next aria-label="Próximo integrante"><svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
-          <span class="slider-count" aria-live="off">1 de 4</span>
-          <button class="round ghost" type="button" data-toggle aria-label="Pausar rotação automática"><svg class="ic" aria-hidden="true"><use href="#i-pause"/></svg></button>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -461,11 +354,11 @@
     <canvas class="net" aria-hidden="true"></canvas>
     <div class="wrap contato-in">
       <img src="images/logo.png" alt="Flammy" width="700" height="531" loading="lazy">
-      <h2>Vamos criar<br>algo juntos?</h2>
+      <h2 class="section-title">Vamos criar<br>algo juntos?</h2>
       <p>Conte pra gente sua ideia ou o problema que você quer resolver. A Flammy transforma isso em software.</p>
       <div class="contato-ctas">
-        <a href="mailto:contato@flammy.dev" class="btn solid-red"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>contato@flammy.dev</a>
-        <a href="https://wa.me/5500000000000" class="btn ghost-white" data-wa="Olá, Flammy! Vim pelo site e quero conversar sobre um projeto."><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Chamar no WhatsApp</a>
+        <a href="mailto:flammysh@gmail.com" class="btn solid-red"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>flammysh@gmail.com</a>
+        <a href="https://wa.me/5571984441582" class="btn ghost-white" data-wa="Olá, Flammy! Vim pelo site e quero conversar sobre um projeto."><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Chamar no WhatsApp</a>
       </div>
     </div>
   </section>
@@ -475,7 +368,6 @@
 <footer>
   <div class="wrap">
     <a href="#top" class="foot-brand"><img src="images/logo.png" alt="" width="36" height="27"> <span>FLAMMY 2026 — Criatividade que ascende Tecnologia</span></a>
-    <span>Criado por Gilmar Araújo Santos Júnior</span>
   </div>
 </footer>
 

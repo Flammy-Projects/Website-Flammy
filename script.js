@@ -9,7 +9,7 @@
 const FLAMMY = {
   // Número com DDI + DDD, só dígitos. (Ex.: 5571999999999)
   // ATENÇÃO: este é o número de exemplo que já estava no site; troque pelo real.
-  whatsapp: '5500000000000',
+  whatsapp: '5571984441582',
 };
 
 // Usuário pediu menos movimento? Então desligamos animações contínuas.
@@ -20,10 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initHeader();
   initReveal();
+  initSectionTitles();
   initCatalogFilter();
   initNetworks();
   initMascotTilt();
   initSlider(document.getElementById('equipe'));
+  initLiquidButtons();
 });
 
 // ---------------------------------------------------------------------------
@@ -111,6 +113,27 @@ function initReveal() {
 }
 
 // ---------------------------------------------------------------------------
+// 4b) Entrada dos títulos de seção
+//    Títulos com a classe .section-title sobem 16px com fade-in na primeira
+//    vez que entram na tela. O estado escondido só existe depois que o
+//    observador é criado (.titles-anim no <html>), então sem JS, sem
+//    IntersectionObserver ou com "movimento reduzido" eles ficam visíveis.
+// ---------------------------------------------------------------------------
+function initSectionTitles() {
+  const titles = document.querySelectorAll('.section-title');
+  if (!titles.length || !('IntersectionObserver' in window) || reduceMotion) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+  document.documentElement.classList.add('titles-anim');
+  titles.forEach(el => io.observe(el));
+}
+
+// ---------------------------------------------------------------------------
 // 5) Catálogo: filtros por categoria
 //    Cada .svc tem data-cat="sistemas automacao ..."; o botão tem data-filter.
 // ---------------------------------------------------------------------------
@@ -191,7 +214,7 @@ function createNetwork(canvas) {
         const b = nodes[j];
         const d = Math.hypot(a.x - b.x, a.y - b.y);
         if (d < LINK) {
-          ctx.strokeStyle = `rgba(255,70,58,${(1 - d / LINK) * 0.38})`;
+          ctx.strokeStyle = `rgba(255,60,60,${(1 - d / LINK) * 0.28})`;
           ctx.lineWidth = 1;
           ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
         }
@@ -200,7 +223,7 @@ function createNetwork(canvas) {
       if (pointer.active) {
         const d = Math.hypot(a.x - pointer.x, a.y - pointer.y);
         if (d < GRAB) {
-          ctx.strokeStyle = `rgba(255,255,255,${(1 - d / GRAB) * 0.5})`;
+          ctx.strokeStyle = `rgba(255,255,255,${(1 - d / GRAB) * 0.4})`;
           ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(pointer.x, pointer.y); ctx.stroke();
         }
       }
@@ -208,7 +231,7 @@ function createNetwork(canvas) {
 
     // Pontos
     nodes.forEach(n => {
-      ctx.fillStyle = n.hot ? 'rgba(255,70,58,.95)' : 'rgba(255,255,255,.8)';
+      ctx.fillStyle = n.hot ? 'rgba(255,60,60,.9)' : 'rgba(255,255,255,.7)';
       ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fill();
     });
   }
@@ -381,4 +404,79 @@ function initSlider(root) {
 
   goTo(0);
   schedule();
+}
+
+// ---------------------------------------------------------------------------
+// 9) Botões Liquid Glass (.btn e .link-btn)
+//    O visual está todo no CSS. Aqui só entram dois estados que o CSS sozinho
+//    não cobre bem:
+//    - .is-pressed: pressionado por mouse, toque ou teclado (Enter; Espaço em
+//      <button>), já que :active não vale para toque no iOS nem para Enter;
+//    - --lg-x / --lg-y: posição do ponteiro, para o reflexo acompanhar o mouse.
+//    Os ouvintes ficam no document, são passivos e não cancelam nada, então
+//    não interferem em cliques, links ou outros ouvintes dos botões.
+// ---------------------------------------------------------------------------
+function initLiquidButtons() {
+  const SELECTOR = '.btn, .link-btn';
+  const MIN_PRESS_MS = 140;          // toque rápido ou Enter ainda mostram o "afundar"
+  const pressed = new Map();         // botão -> instante em que foi pressionado
+  const buttonOf = target => (target instanceof Element ? target.closest(SELECTOR) : null);
+  const press = el => { el.classList.add('is-pressed'); pressed.set(el, performance.now()); };
+  const release = el => {
+    const since = pressed.get(el);
+    if (since === undefined) return;
+    pressed.delete(el);
+    const wait = MIN_PRESS_MS - (performance.now() - since);
+    if (wait <= 0) { el.classList.remove('is-pressed'); return; }
+    setTimeout(() => { if (!pressed.has(el)) el.classList.remove('is-pressed'); }, wait);
+  };
+  const releaseAll = () => [...pressed.keys()].forEach(release);
+  const passive = { passive: true };
+
+  document.addEventListener('pointerdown', e => {
+    const el = buttonOf(e.target);
+    if (el && (e.pointerType !== 'mouse' || e.button === 0)) press(el);
+  }, passive);
+  document.addEventListener('pointerup', releaseAll, passive);
+  document.addEventListener('pointercancel', releaseAll, passive);
+  // Saiu de cima do botão ainda segurando: solta (equivale ao mouseleave)
+  document.addEventListener('pointerout', e => {
+    const el = buttonOf(e.target);
+    if (el && pressed.has(el) && !el.contains(e.relatedTarget)) release(el);
+  }, passive);
+
+  document.addEventListener('keydown', e => {
+    if (e.repeat) return;
+    const el = buttonOf(e.target);
+    if (!el) return;
+    if (e.key === 'Enter' || (e.key === ' ' && el.tagName === 'BUTTON')) press(el);
+  });
+  document.addEventListener('keyup', releaseAll);
+  document.addEventListener('focusout', e => { const el = buttonOf(e.target); if (el) release(el); });
+  window.addEventListener('blur', releaseAll);
+  // Voltar pelo histórico do navegador não pode trazer um botão "afundado"
+  window.addEventListener('pageshow', releaseAll);
+
+  // Foco pelo teclado: o reflexo volta para o centro do topo (padrão do CSS)
+  document.addEventListener('focusin', e => {
+    const el = buttonOf(e.target);
+    if (el && el.matches(':focus-visible')) { el.style.removeProperty('--lg-x'); el.style.removeProperty('--lg-y'); }
+  });
+
+  // Reflexo segue o ponteiro (só mouse/caneta; sem isso ele fica fixo no topo)
+  if (reduceMotion) return;
+  let frame = 0, last = null;
+  document.addEventListener('pointermove', e => {
+    if (e.pointerType === 'touch') return;
+    const el = buttonOf(e.target);
+    if (!el) return;
+    last = { el, x: e.clientX, y: e.clientY };
+    if (frame) return;
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      const r = last.el.getBoundingClientRect();
+      last.el.style.setProperty('--lg-x', `${(last.x - r.left).toFixed(1)}px`);
+      last.el.style.setProperty('--lg-y', `${(last.y - r.top).toFixed(1)}px`);
+    });
+  }, passive);
 }
